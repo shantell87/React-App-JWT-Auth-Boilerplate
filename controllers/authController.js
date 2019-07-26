@@ -18,5 +18,9 @@ module.exports = {
         } catch (error) {
             res.status(404).json({error});
         }
+    },
+
+    signIn: (req, res) => {
+        res.send("I'm hit!");
     }
-}
+};
