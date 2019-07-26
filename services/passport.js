@@ -28,4 +28,16 @@ const localLogin = new LocalStrategy(localOptions, async (email, password, done)
     }
 })
 
+//setup options for Jwt(jason web token) strategy
+//we need to tell out strategy where to look for the token
+const jwtOptions = {
+//tells jwt that whenever a request comes in, in needs to look in
+//the header for he property called authorizattion, 
+//if we want passport to handle it
+    jwtFromRequest: ExtractJwt.fromHeader('authorization'),
+//tells jwt what secret we used to encode the token so we decode it
+secretOrKey: config.secret
+
+}
+
 passport.use(localLogin);
