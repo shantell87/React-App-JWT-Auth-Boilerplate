@@ -27,3 +27,5 @@ const localLogin = new LocalStrategy(localOptions, async (email, password, done)
         done(e, false);
     }
 })
+
+passport.use(localLogin);
