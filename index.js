@@ -7,7 +7,7 @@ const cors     = require('cors');
 const app = express();
 
 // Database setup
-mongoose.connect('mongodb://localhost:auth/auth', {useNewURLParser: true, useCreateIndex: true});
+mongoose.connect('mongodb://localhost:auth/auth', {useNewUrlParser: true, useCreateIndex: true});
 
 //Middlewares setup
 app.use(morgan('combined'));
