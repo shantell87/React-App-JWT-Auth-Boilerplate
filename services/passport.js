@@ -3,7 +3,7 @@ const User = require('./../models/User');
 const config = require('./../config');
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
-const LocalStrategy = require('passport.local');
+const LocalStrategy = require('passport-local');
 
 
 //create local strategy (use a strategy for each third party login system (eg Facebook or Google))
