@@ -1,26 +1,18 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Stuff extends Component {
-    state = {
-        myFaveNumber: 5
-    }
-    handleIncrement = () => {
-        this.setState({ myFaveNumber: this.state.myFaveNumber + 1 });
-    }
-
-    handleDecrement = () => {
-        this.setState({ myFaveNumber: this.state.myFaveNumber - 1 });
-    }
-
-    render() {
-        return (
-            <div>
-                <h1>myFaveNumber: {this.state.myFaveNumber}</h1>
-                <button onClick={this.handleIncrement}>Up</button>
-                <button onClick={this.handleDecrement}>Down</button>
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+        <h1>myFaveNumber: {this.props.counter}</h1>
+      </div>
+    )
+  }
 }
 
-export default Stuff;
+function mapStateToProps({ counter }) {
+  return { counter: counter.counter };
+}
+
+export default connect(mapStateToProps, null)(Stuff);
